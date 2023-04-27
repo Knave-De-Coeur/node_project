@@ -4,12 +4,15 @@
   "description": "my first node project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node app.js"
   },
   "keywords": [],
   "author": "Knave-De-Coeur",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
