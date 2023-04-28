@@ -1,9 +1,4 @@
-const {alex, peter} = require('./names')
-const sayHi = require('./utils')
-const data = require('./props')
-
-console.log(data)
-
-sayHi('Someone')
-sayHi(alex)
-sayHi(peter)
+setInterval(() => {
+    console.log("hello world")
+}, 2000)
+console.log("Running first");
