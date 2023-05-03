@@ -1,9 +1,13 @@
 const express = require('express')
-const path = require('path')
 const app = express()
-const {products, people} = module.require('./data')
+const {products} = module.require('./data')
+const {logger} = module.require('./logger')
+
+console.log(logger);
 // setup static and middleware
 app.use(express.static('./public'))
+
+app.use('/api', logger)
 
 app.get('/', (req, res) => {
 
