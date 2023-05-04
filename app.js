@@ -1,12 +1,19 @@
 const express = require('express')
-const path = require('path')
 const app = express()
-const {products, people} = module.require('./data')
+const {products} = module.require('./data')
+const people = module.require('./routes/people')
 // setup static and middleware
 app.use(express.static('./public'))
+app.use(express.urlencoded({extended:true}))
+
+app.use(express.json())
+app.use("/api/people", people)
 
 app.get('/', (req, res) => {
 
+})
+app.get('/api/login', (req, res) => {
+    res.status(200).json({success: true})
 })
 
 app.get('/api/products', (req, res) => {
@@ -15,6 +22,9 @@ app.get('/api/products', (req, res) => {
         return {id, name, image}
     })
     res.json(newProducts)
+})
+app.post('/api/login', (res, req) => {
+    res.send('POST')
 })
 
 app.get('/api/products/:productID', (req, res) => {
